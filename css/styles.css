@@ -36,11 +36,15 @@ img {
     max-width: 100%;
     display: block;
 }
-/* Aplicara a todas las clases que contengas __contenedor*/
+/* Aplicara a todas las clases que finalizan en  __contenedor*/
 [class$="__contenedor"]{
     max-width: 120rem;
     margin: 0 auto;
     width: 90%;
+}
+[class$="__heading"]{
+    text-align: center;
+    margin-bottom: 5rem;
 }
 
 .header{
@@ -91,7 +95,6 @@ img {
     }
 }
 .header__heading{
-    text-align: center;
     font-size: 3rem;
 }
 @media (min-width: 768px) {
@@ -149,10 +152,6 @@ img {
 .nucleus {
     margin-top: 3rem;
 }
-.nucleus__heading{
-    text-align: center;
-    margin-bottom: 5rem;
-}
 
 .nucleus__grid{
     display: flex;
@@ -169,6 +168,7 @@ img {
 }
 
 .listado__elemento{
+    background-color: var(--blanco);
     box-shadow: 0px 0px 15px 3px rgb(0 0 0 /.15);
     padding: 2rem;
     margin-bottom: 5rem;
@@ -178,12 +178,131 @@ img {
 .listado__elemento:hover{
     transform: scale(1.1);
 }
+
+@media (min-width: 768px) {
+    .listado__elemento--2col {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
 .listado__heading{
     font-size: 3rem;
     color: var(--primario);
     margin: 0;
 }
+
+.listado__numerico{
+    font-size: 6rem;
+    color: var(--primario);
+    font-weight: 900;
+    margin: 0;
+    text-align: center;
+}
+@media (min-width:768px ) {
+    .listado__numerico{
+        font-size: 4rem;
+        flex-basis: 20rem;
+        text-align: right;
+    }
+}
+
 .listado__texto{
     margin: 0;
     font-size: 2rem;
+}
+.seguridad {
+    background: var(--primario);
+    padding: 5rem 0;
+    margin-top:20rem;
+    transform: skewY(3deg); /*Permite colocar girar al contenedor*/
+}
+.seguridad__contenedor{
+    transform: skewY(-3deg);/*Recuperamos lo girado*/
+}
+
+
+.seguridad__heading{
+    color: var(--blanco);
+}
+@media (min-width: 768px) {
+    .seguridad__grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 5rem;
+        align-items: center;
+    }
+}
+
+.comisiones {
+    margin-top: 8rem;
+}
+@media (min-width: 768px) {
+    .comisiones__grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 8rem;
+        align-items:end;
+    }
+}
+@media (min-width: 998px) {
+    .comisiones__grid{
+        align-items: center;
+    }
+}
+
+.comisiones__texto{
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+@media (min-width: 768px) {
+    .comisiones__texto{
+        text-align: left;
+    }
+}
+.testimoniales{
+    background-color: var(--primario);
+    padding: 5rem 0;
+}
+.testimoniales__heading{
+    color: var(--blanco);
+}
+.testimoniales__grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+@media (min-width: 768px) {
+    .testimoniales__grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.testimonial{
+    box-shadow: 0px 0px 15px 3px rgb(0 0 0 /.15);
+    background-color: var(--blanco);
+    padding: 2rem;
+    position: relative;
+}
+.testimonial__texto{
+    padding-left: 4rem;
+}
+.testimonial__texto::before{
+    content: '';
+    background-image: url(../img/comilla.png);
+    background-size: 3rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 3.5rem;
+    left: 2rem;
+}
+.testimonial__autor{
+   color: var(--primario);
+   font-weight: 700;
+   text-align: right;
 }
